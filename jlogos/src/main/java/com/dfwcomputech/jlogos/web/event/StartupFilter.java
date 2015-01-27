@@ -1,4 +1,4 @@
-package com.dfwcomputech.jlogos.web.presenter;
+package com.dfwcomputech.jlogos.web.event;
 
 import org.vaadin.spring.events.EventBusListenerMethodFilter;
 

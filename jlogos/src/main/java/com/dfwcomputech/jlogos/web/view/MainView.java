@@ -8,8 +8,6 @@ import org.vaadin.spring.navigator.annotation.VaadinView;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.PasswordField;
-import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
 
@@ -26,9 +24,8 @@ public class MainView extends VerticalLayout implements View{
         setMargin(true);
         setSpacing(true);
         setSizeFull();
-        addComponent(new Label("WELCOME TO MAIN VIEW"));
-        addComponent(new TextField("USER:"));
-        addComponent(new PasswordField("PASSCODE:"));
+        addComponent(new Label("WELCOME TO JLOGOS!"));
+
 	}
 	
 	@Override

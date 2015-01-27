@@ -8,6 +8,8 @@ import org.vaadin.spring.events.annotation.EventBusListenerMethod;
 import org.vaadin.spring.navigator.Presenter;
 import org.vaadin.spring.navigator.annotation.VaadinPresenter;
 
+import com.dfwcomputech.jlogos.web.event.Action;
+import com.dfwcomputech.jlogos.web.event.StartupFilter;
 import com.dfwcomputech.jlogos.web.view.MainView;
 
 @VaadinPresenter(viewName = MainView.NAME)
