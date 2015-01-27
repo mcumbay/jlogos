@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="CONSOLE_LOG" class="org.apache.log4j.ConsoleAppender">
+        <param name="Threshold" value="ALL" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %c - %m\n" />
+        </layout>
+    </appender>
+	<appender name="DEBUG_LOG" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="debug.log" />
+		<param name="Threshold" value="DEBUG" />
+		<param name="MaxBackupIndex" value="5" />
+		<param name="MaxFileSize" value="10MB" />
+		<layout class="org.apache.log4j.TTCCLayout">
+			<param name="DateFormat" value="ISO8601" />
+		</layout>
+	</appender>
+	
+	<logger name="com.dfwcomputech" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE_LOG" />
+	</logger>
+
+	<logger name="org.vaadin.spring" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE_LOG" />
+	</logger>
+	
+	<root>
+		
+		<level value="ERROR" />
+		<!--  <appender-ref ref="DEBUG_LOG" /> -->
+		<appender-ref ref="CONSOLE_LOG" />
+	</root>
+</log4j:configuration>

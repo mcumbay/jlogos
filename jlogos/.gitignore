@@ -1,0 +1,17 @@
+/.apt_generated/
+#Maven
+target/
+
+#Eclipse
+.settings/
+*.project
+*.classpath
+*.factorypath
+
+#Vaadin
+src/main/webapp/VAADIN/themes/*.css
+src/main/webapp/VAADIN/themes/**/*.css
+src/main/webapp/VAADIN/widgetsets/
+src/main/webapp/VAADIN/gwt-unitCache/
+
+DATA/
