@@ -9,11 +9,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class IndexController {
 	private Logger log = LoggerFactory.getLogger(getClass());
-	@RequestMapping(value="/")
+
+	@RequestMapping(value = "/")
 	@ResponseBody
-	public String showIndex(){
+	public String showIndex() {
 		log.debug("showIndex");
 		return "Hello MVC Index";
 	}
-	
+
+	@RequestMapping(value="/admin/**")
+	@ResponseBody
+	public String showAdminPage(){
+		log.debug("Only for Admins");
+		return "Hello Admin!!!";
+	}
 }

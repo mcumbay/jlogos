@@ -4,8 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.vaadin.spring.annotation.VaadinUI;
 import org.vaadin.spring.events.EventBus;
 import org.vaadin.spring.events.EventScope;
-
-import com.dfwcomputech.jlogos.common.model.User;
+import com.dfwcomputech.jlogos.service.SecurityService;
 import com.dfwcomputech.jlogos.web.event.Action;
 import com.dfwcomputech.jlogos.web.presenter.LoginPresenter;
 import com.dfwcomputech.jlogos.web.presenter.MainPresenter;
@@ -26,18 +25,25 @@ public class MyUI extends UI {
 	@Autowired
 	private LoginPresenter loginPresenter;
 	
-	private User principal;
+	@Autowired
+	private SecurityService security;
 	
 	@Override
 	protected void init(VaadinRequest request) {
 		
 		eventBus.publish(EventScope.SESSION, this,Action.START);
-		if(principal== null)
-			setContent(loginPresenter.getView());
+		if(!security.isUserSignedIn()){
+			
+			setContent(loginPresenter.getView());	
+		}
 		else{
-			setContent(mainPresenter.getView());
+			showMainView();
 		}	
 			
+	}
+	
+	private void showMainView(){
+		setContent(mainPresenter.getView());
 	}
 
 }

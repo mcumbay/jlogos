@@ -8,12 +8,12 @@
 	<name>jlogos Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
-	<properties>	
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<spring.version>4.1.4.RELEASE</spring.version>
 		<vaadin.version>7.3.9</vaadin.version>
-		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>		
+		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 		<spring.vaadin.version>0.0.4-SNAPSHOT</spring.vaadin.version>
 		<servlet.version>3.1.0</servlet.version>
 		<aspectj.version>1.6.10</aspectj.version>
@@ -51,7 +51,7 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-	
+
 	<!-- Dependencies -->
 	<dependencies>
 		<!-- Vaadin -->
@@ -133,6 +133,25 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>3.2.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>3.2.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>3.2.5.RELEASE</version>
+		</dependency>
+
+
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -159,7 +178,7 @@
 
 	<build>
 		<finalName>jlogos</finalName>
-		
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -235,9 +254,9 @@
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>9.3.0.M1</version>
 			</plugin>
-			
+
 		</plugins>
-		
+
 		<pluginManagement>
 			<plugins>
 				<!--This plugin's configuration is used to store Eclipse m2e settings 
